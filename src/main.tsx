@@ -1,10 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+import React, { useEffect } from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './app';
+import './index.css';
+import { HelmetProvider } from 'react-helmet-async';
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+const root = ReactDOM.createRoot(
+    document.getElementById('root') as HTMLElement
+);
+root.render(
+    // <React.StrictMode>
+    //   <App />
+    // </React.StrictMode>
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
+);
+
